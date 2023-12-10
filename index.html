@@ -7,10 +7,39 @@
         <meta name="viewport" content="width=device-width initial-scale=1">
 
         <link rel="icon" type="image/png" sizes="32x32" href="logo-w-bg.png">
+
+        <link rel="stylesheet" href="style.css">
         <!-- <meta name="description" content=""> -->
     </head>
 
     <body>
-        
+        <script src="script.js"></script>
+        <script src="sparticles.min.js"></script>
+        <script>
+            window.onload = function() {
+                let sparticlesContainer = document.getElementById("sparticles-container");
+                let mySparticles = new Sparticles(sparticlesContainer, {color: "red"});
+            }
+        </script>
+
+        <div id="sparticles-container"></div>
+
+        <div id="topbar">
+            <img id="topbar-img" src="logo-w.png" alt="Waza Icon" width="50" height="50">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Discord</a></li>
+                <li><a href="#">Github</a></li>
+            </ul>
+        </div>
+
+        <div id="main-content">
+            <img id="center-image" src="https://cdn.discordapp.com/avatars/959534223293833256/32eb5f7f78d255fddd5cd16fa7fd2b8f.png?size=2048" crossorigin="anonymous" alt="Waza Pic" width="150">
+            <div id="center-title">Waza</div>
+            <div id="center-desc">The cutest furry boy! >.< </div>
+        </div>
+        <div id="second-content">
+
+        </div>
     </body>
 </html>
