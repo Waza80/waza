@@ -27,8 +27,8 @@
                     color: "red",
                     minSize: 100,
                     maxSize: 200,
-                    minAlpha: 2,
-                    maxAlpha: 2,
+                    minAlpha: 0.3,
+                    maxAlpha: 1.2,
                     twinkle: false,
                     xVariance: 50,
                     yVariance: 50,
@@ -47,9 +47,9 @@
         <div id="topbar">
             <img id="topbar-img" src="logo-w.png" alt="Waza Icon" width="50" height="50">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="/index.html">Home</a></li>
                 <li><a href="#second-content">Discord</a></li>
-                <li><a href="#">Github</a></li>
+                <li><a href="https://github.com/Waza80">Github</a></li>
             </ul>
         </div>
 
@@ -59,7 +59,8 @@
             <div id="center-desc">The cutest furry boy! &gt;.&lt;     </div>
         </div>
         <div id="second-content">
-            <iframe class="discord-status" src="https://lanyard.cnrad.dev/api/959534223293833256" title="Discord Profile - Waza80" frameborder="0" width="410" height="210"></iframe>
+            <div id="discord-title">My Status</div>
+            <iframe id="discord-status" src="https://lanyard.cnrad.dev/api/959534223293833256" title="Discord Profile - Waza80" frameborder="0" width="410" height="210"></iframe>
         </div>
 
         <script>
@@ -83,7 +84,6 @@
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth)
                 );
             }
-
             
             window.addEventListener('scroll', handleScroll);
             });
