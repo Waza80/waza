@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     margin: 0;
     overflow-x: hidden;
+    cursor: url('cursor-idle.png'), auto;
 }
 
 div {
@@ -29,7 +30,7 @@ p, #center-desc {
     justify-content: center;
     align-items: center;
     gap: 18px;
-    background-color: rgb(14, 18, 36);
+     background-color: rgb(14, 18, 36);
     height: 100vh;
     min-height: 500px;
 }
@@ -50,18 +51,16 @@ p, #center-desc {
     -webkit-backdrop-filter: blur(12px);
 }
 
-ul {
+
+#topbar ul {
     list-style-type: none;
     margin: 0;
+    margin-right: -2px;
     padding: 0;
     display: flex;
     gap: 2px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, Tahoma, sans-serif;
     font-size: 16px;
-}
-
-#topbar ul {
-    margin-right: -2px;
 }
 
 #topbar ul li a {
@@ -75,6 +74,108 @@ ul {
 
 #topbar ul li a:hover {
     background-color: rgba(255, 255, 255, 0.15);
+}
+
+#menu-icon {
+    display: none; 
+}
+
+#bottom-links {
+    z-index: 4;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 8px;
+    margin: 16px;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+#bottom-links a img {
+    width: 50px;
+    height: auto;
+    border-radius: 12px;
+    transition: 0.3s;
+    padding: 8px;
+}
+
+#bottom-links a img:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+@media only screen and (max-width: 768px) {
+    #topbar ul {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        margin: 0;
+        gap: 0;
+        padding: 4px;
+        background-color: rgba(0, 0, 0, 0.5); 
+        width: calc(100% - 8px);
+        border-radius: 16px; 
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4); 
+        overflow: hidden; 
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    #topbar ul.show {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    #topbar ul li {
+        flex: auto;
+        display: flex;
+        text-align: center;
+        padding: 4px;
+    }
+
+    #topbar ul li a {
+        flex: 1;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-weight: bold; 
+        font-size: 18px;
+        border-radius: 16px;
+        transition: background-color 0.3s ease; 
+    }
+
+    #topbar ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.15); 
+    }
+
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+        transition: transform 0.3s ease; 
+    }
+
+    #menu-icon.rotate {
+        transform: rotate(-90deg); 
+    }
+
+    #bottom-links {
+        flex-direction: column;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    -webkit-tap-highlight-color: transparent;
 }
 
 @keyframes moveUpDown {
@@ -140,9 +241,19 @@ ul {
 }
 
 #discord-status {
+    pointer-events: none;
     max-width: 100%;
     background-color: #1a1c1f;
-    border-radius: 11px;
+    border-radius: 10px;
+}
+
+#discord-hyperlink {
+    display: inline-block;
+    z-index: 3;
+    width: 410;
+    height: 210;
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -167,4 +278,12 @@ ul {
 .scroll-animation.scroll-active {
     opacity: 1;
     transform: translateY(0);
+}
+
+a:hover, button:hover, [onclick]:hover {
+    cursor: url('cursor-select.png'), auto;
+}
+
+::selection {
+  background-color: rgba(2, 145, 85, 0.485);
 }
