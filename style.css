@@ -310,7 +310,7 @@ a:hover, button:hover, [onclick]:hover {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
     margin-top: 16px;
 }
 
