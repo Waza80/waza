@@ -36,7 +36,7 @@ p, #center-desc {
 }
 
 #topbar {
-    z-index: 3;
+    z-index: 9999; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -195,6 +195,7 @@ a {
 #center-image {
     z-index: 2;
     border-radius: 26px;
+    background-color: white;
     box-shadow: 0 0 10px 3px white;;
     /* animation: moveUpDown 2s infinite; */
 }
@@ -310,7 +311,7 @@ a:hover, button:hover, [onclick]:hover {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     margin-top: 16px;
 }
 
@@ -361,4 +362,4 @@ footer {
     footer {
         font-size: 1.5em; 
     }
-}
+  }
