@@ -21,3 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
         for (let s = 0; s < t.length; s++) i(t[s]) && !t[s].classList.contains("scroll-active") && t[s].classList.add("scroll-active")
     })
 });
+
+fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
+    method: "GET"
+})
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("center-image").src = "https://cdn.discordapp.com/avatars/959534223293833256/" + data.data.discord_user.avatar + ".jpg?size=2048";
+    })
