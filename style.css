@@ -259,7 +259,7 @@ a {
     border-radius: 10px;
 }
 
-#hyperlink {
+.hyperlink {
     display: inline-block;
     z-index: 3;
     width: 410;
@@ -300,6 +300,7 @@ a:hover, button:hover, [onclick]:hover {
   background-color: rgba(2, 145, 85, 0.485);
 }
 
+/*
 #third-content {
     width: 100%;
     min-height: 400px;
@@ -359,3 +360,4 @@ footer {
     background-color: rgb(9, 11, 22);
     z-index: 2;
 }
+*/
