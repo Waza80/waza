@@ -5,60 +5,28 @@
         <title>Waza - About</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width initial-scale=1 minimum-scale=1 maximum-scale=1">
-        <meta name="description" content="The cutest furry boy! >.<">
+        <meta name="description" content="The cutest furry boy! &gt;.&lt;">
         <meta name="theme-color" content="#00014a">
         <meta property="og:title" content="Waza">
-        <meta property="og:image" content="/logo-w-bg.png">
-        <meta property="og:description" content="The cutest furry boy! >.<">
+        <meta property="og:image" content="/logo-w.webp">
+        <meta property="og:image:alt" content="Icon"/>
+        <meta property="og:image:type" content="/logo-w.webp"/>
+        <meta property="og:description" content="The cutest furry boy! &gt;.&lt;">
         <meta property="og:type" content="website">
 
-        <link rel="shortcut icon" type="image/png" href="logo-w-bg.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="logo-w-bg.png">
-        <link rel="icon" type="image/png" sizes="48x48" href="logo-w-bg.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="logo-w-bg.png">
-        <link rel="icon" type="image/png" sizes="144x144" href="logo-w-bg.png">
-
+        <link rel="shortcut icon" type="image/png" href="logo-w-bg.ico">
+        <link rel="icon" type="image/png" sizes="16x16" href="logo-w-bg.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="logo-w-bg.ico">
+        <link rel="icon" type="image/x-icon" href="logo-w-bg.ico">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <script src="script.js"></script>
-        <script src="sparticles.min.js"></script>
-        <script>
-            window.onload = function() {
-                let sparticlesContainer = document.getElementById("sparticles-container");
-                sparticlesContainer.style.background = "linear-gradient(45deg, #5a00ff, #00014a)";
-
-                let mySparticles = new Sparticles(sparticlesContainer, {
-                    color: "rgb(170, 0, 0)",
-                        /* function(context, particle) {
-
-                        let gradient = context.createLinearGradient(0, 0, 0, particle.size);
-                        gradient.addColorStop(0, "rgba(200, 200, 200, 0.2)"); 
-                        gradient.addColorStop(1, "rgba(200, 200, 200, 0)");  
-                        return gradient;
-                    }, */
-                    minSize: 100,
-                    maxSize: 200,
-                    minAlpha: 0.3,
-                    maxAlpha: 1.1,
-                    twinkle: false,
-                    xVariance: 50,
-                    yVariance: 50,
-                    speed: 4,
-                    count: 30,
-                    style: "fill",
-                    glow: 0,
-                    drift: 0,
-                    parallax: 0,
-                });
-            }
-        </script>
-
-        <div id="sparticles-container"></div>
-
-        <div id="topbar">
-            <img id="topbar-img" src="logo-w.png" alt="Waza Icon" width="50" height="50">
+        <canvas id="particles-container"></canvas>
+        <script src="script.js" onresize="resizeCanvas()"></script>
+        
+        <nav id="topbar">
+            <img id="topbar-img" src="logo-w.webp" alt="Waza Icon" width="50" height="50">
             <div id="menu-icon">&#9776;</div> 
             <ul class="menu-list">
                 <li><a href="/index.html">Home</a></li>
@@ -66,19 +34,13 @@
                 <li><a href="#third-content">Projects</a></li>
                 <li><a href="https://github.com/Waza80">Github</a></li>
             </ul>
-        </div>
-
-        <div id="bottom-links">
-            <a href="https://discord.com/users/959534223293833256"><img src="discord-mark-blue.png"></a>
-            <a href="https://github.com/YxuTeam"><img src="yxu-dev.png"></a>
-            <a href="https://github.com/Waza80"><img src="github-mark-white.png"></a>
-        </div>
+        </nav>
         
-        <div id="main-content">
-            <img id="center-image" width="150" height="150">
+        <main id="main-content">
+            <img id="center-image" src="logo-w.png" width="150" height="150">
             <div id="center-title">Waza</div>
             <div id="center-desc">The cutest furry boy! &gt;.&lt;</div>
-        </div>
+        </main>
         
         <div id="second-content">
             <div id="highlight-title">My Status</div>
@@ -89,35 +51,8 @@
                 <iframe id="iframe-status" style="background-color: rgb(0, 0, 0);" src="https://github-readme-stats.vercel.app/api?username=Waza80&show_icons=true&count_private=true&hide_border=true&theme=midnight-purple" title="Github Stats - Waza80" frameborder="0" width="410" height="210"></iframe>
             </a>
         </div>
-
-        <div id="third-content">
-            <div id="highlight-title">My Projects</div>
-            <div class="projects-container">
-                <div class="project-item">
-                    <div class="project-image-container">
-                        <img src="logo-w-bg.png" width="50" height="50">
-                        <img src="logo-w-bg.png" width="50" height="50">
-                        <img src="logo-w-bg.png" width="50" height="50">
-                    </div>
-                    <a class="project" href="https://infinix.gitbook.io/documentation/">
-                        <p>Creator's furry artwork!</p>
-                        <img src="creator-artwork.png" height="240" style="border-radius: 8px; border: 2px solid darkslategray;">
-                    </a>
-                </div>
-                <div class="project-item">
-                    <div class="project-image-container">
-                        <img src="yxu-dev.png" width="50" height="50">
-                    </div>
-                    <a class="project" href="https://discord.com/YxuTeam">
-                        <p>Yxu Team's GitHub</p>
-                        <img src="yxu-dev.png" height="100" style="border-radius: 8px; border: 2px solid darkslategray;">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </body>
     
     <footer>
         <p>&copy; 2023 Waza80</p>
-    </footer
+    </footer>
 </html>
