@@ -170,7 +170,7 @@ p, #center-desc {
 
     #menu-icon {
         display: block;
-        cursor: pointer;
+        cursor: url('cursor-select.png'), auto;
         font-size: 24px;
         color: white;
         transition: transform 0.3s ease; 
