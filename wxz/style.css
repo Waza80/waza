@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     margin: 0;
     overflow-x: hidden;
-    cursor: url('cursor-idle.png'), auto;
+    cursor: url('../cursor-idle.png'), auto;
 }
 
 div, nav, footer {
@@ -337,7 +337,7 @@ a {
 }
 
 a:hover, button:hover, [onclick]:hover {
-    cursor: url('cursor-select.png'), auto;
+    cursor: url('../cursor-select.png'), auto;
 }
 
 ::selection {

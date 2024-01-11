@@ -60,50 +60,96 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-const balls = [];
-const numBalls = 15;
-let currentDate = new Date; currentDate = currentDate.getTime() / 1000
+const hearts = [];
+const numHearts = 30;
+function getSize() {return 20 + Math.random() * 40;}
 
-for (let i = 0; i < numBalls; i++) {
-    let radius = 50 + Math.random() * 50;
-    balls.push({
+for (let i = 0; i < numHearts; i++) {
+    let size = getSize();
+    hearts.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: radius,
+        size: size,
+        originalSize: size,
         color: `rgba(170, 0, 0, 1)`,
-        opacity: 0.3 + Math.random() * 0.6,
-        dx: (Math.random() * 2 - 1) / (radius / 85),
-        dy: (Math.random() * 2 - 1) / (radius / 85),
-        dopacity: -0.005,
+        beatings: 1,
+        dx: 0,
+        dy: -(0.5 + Math.random() * 2) / (size / 55),
+        dbeating: -0.75,
     });
 }
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    balls.forEach(ball => {
-        ball.x += ball.dx;
-        ball.y += ball.dy;
+    hearts.forEach(heart => {
+        heart.x += heart.dx;
+        heart.y += heart.dy;
 
-        if (ball.x < 0 || ball.x > canvas.width) {
-            ball.dx *= -1;
-        }
-        if (ball.y < 0 || ball.y > canvas.height) {
-            ball.dy *= -1;
+        if (heart.x < (0 - heart.size) || (heart.x + heart.size) > canvas.width) {
+            heart.dx *= -1;
         }
 
-        ball.opacity += ball.dopacity;
-
-        if (ball.opacity <= 0.3 || ball.opacity >= 0.9) {
-            ball.dopacity = -ball.dopacity;
+        if (heart.y < (0 - heart.size)) {
+            let newSize = getSize();
+            heart.size = newSize;
+            heart.originalSize = newSize;
+            heart.x = canvas.width * Math.random();
+            heart.y = canvas.height + heart.size;
+            heart.dy = -(0.5 + Math.random() * 2) / (heart.size / 55);
         }
 
-        ball.color = `rgba(170, 0, 0, ${ball.opacity})`;
+        if (heart.beatings <= 4) {
+            heart.size += heart.dbeating;
 
+            if (heart.originalSize < heart.size * 1 || heart.originalSize > heart.size * 1.2) {
+                heart.dbeating = -heart.dbeating;
+                heart.beatings++
+            }
+        }
+
+        if (heart.beatings >= 4 && heart.beatings != 5) {
+            heart.beatings = 5;
+            setTimeout(function() {heart.beatings = 0}, 1500);
+        }
+
+        ctx.save();
         ctx.beginPath();
-        ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
-        ctx.fillStyle = ball.color;
+        let topCurveHeight = heart.size * 0.3;
+        ctx.moveTo(heart.x, heart.y + topCurveHeight);
+    
+        // top left curve
+        ctx.bezierCurveTo(
+            heart.x, heart.y, 
+            heart.x - heart.size / 2, heart.y, 
+            heart.x - heart.size / 2, heart.y + topCurveHeight
+        );
+      
+        // bottom left curve
+        ctx.bezierCurveTo(
+            heart.x - heart.size / 2, heart.y + (heart.size + topCurveHeight) / 2, 
+            heart.x, heart.y + (heart.size + topCurveHeight) / 1.5, 
+            heart.x, heart.y + heart.size
+        );
+      
+        // bottom right curve
+        ctx.bezierCurveTo(
+            heart.x, heart.y + (heart.size + topCurveHeight) / 1.5, 
+            heart.x + heart.size / 2, heart.y + (heart.size + topCurveHeight) / 2, 
+            heart.x + heart.size / 2, heart.y + topCurveHeight
+        );
+      
+        // top right curve
+        ctx.bezierCurveTo(
+            heart.x + heart.size / 2, heart.y, 
+            heart.x, heart.y,
+            heart.x, heart.y + topCurveHeight
+        );
+      
+        ctx.closePath();
+        ctx.fillStyle = heart.color;
         ctx.fill();
+        ctx.restore();
     });
     requestAnimationFrame(animate);
 }
