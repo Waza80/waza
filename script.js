@@ -32,7 +32,7 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
     .then(data => {
         document.getElementById("center-image").src = "https://cdn.discordapp.com/avatars/959534223293833256/"
             + data.data.discord_user.avatar 
-            + ".?size=512";
+            + ".webp?size=512";
     })
 
 const canvas = document.getElementById("particles-container");
