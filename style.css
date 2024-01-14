@@ -246,7 +246,7 @@ a {
     border-radius: 10px;
 }
 
-#center-links a {
+#center-links svg a {
     flex: 0;
     display: flex;
     width: 50px;
