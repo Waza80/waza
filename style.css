@@ -254,8 +254,8 @@ a {
     align-items: center;
 }
 
-#center-links a img {
-    flex: 0;
+#center-links svg {
+    flex: 1;
     width: 50px;
     height: auto;
     border-radius: 8px;

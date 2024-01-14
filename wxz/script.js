@@ -110,7 +110,7 @@ function animate() {
 
         if (heart.beatings >= 4 && heart.beatings != 5) {
             heart.beatings = 5;
-            setTimeout(function() {heart.beatings = 0}, 1500);
+            setTimeout(function() {heart.beatings = 0}, 1000);
         }
 
         ctx.save();
