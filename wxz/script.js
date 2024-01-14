@@ -30,9 +30,17 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
 })
     .then(response => response.json())
     .then(data => {
-        document.querySelector(".waza").src = "https://cdn.discordapp.com/avatars/959534223293833256/"
+        let c = document.getElementById("center-holder");
+        let img = document.createElement("img");
+        img.id = "center-image";
+        img.alt = "Waza Icon";
+        img.width = "150";
+        img.height = "150";
+        img.src = "https://cdn.discordapp.com/avatars/959534223293833256/"
             + data.data.discord_user.avatar 
             + ".webp?size=512";
+        
+        c.insertBefore(img, c.firstChild)
     })
 
 fetch("https://api.lanyard.rest/v1/users/967182770331865088", {
@@ -40,9 +48,17 @@ fetch("https://api.lanyard.rest/v1/users/967182770331865088", {
 })
     .then(response => response.json())
     .then(data => {
-        document.querySelector(".zeltales").src = "https://cdn.discordapp.com/avatars/967182770331865088/"
+        let c = document.getElementById("center-holder");
+        let img = document.createElement("img");
+        img.id = "center-image";
+        img.alt = "Waza Icon";
+        img.width = "150";
+        img.height = "150";
+        img.src = "https://cdn.discordapp.com/avatars/967182770331865088/"
             + data.data.discord_user.avatar 
             + ".webp?size=512";
+        
+        c.appendChild(img)
     })
 
 const canvas = document.getElementById("particles-container");
