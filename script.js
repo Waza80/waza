@@ -44,6 +44,7 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
         c.replaceWith(img)
 
         let img2 = document.createElement("img");
+        img2.loading = "lazy"
         img2.id = "dsc-avatar";
         img2.alt = "Discord Avatar";
         img2.width = "128";
