@@ -30,7 +30,9 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
 })
     .then(response => response.json())
     .then(data => {
-        let c = document.querySelector(".img-placeholder")
+        console.log(data);
+        let c = document.querySelector(".img-placeholder-1"), 
+            d = document.querySelector(".img-placeholder-2");
         let img = document.createElement("img");
         img.id = "center-image";
         img.alt = "Waza Icon";
@@ -39,8 +41,17 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
         img.src = "https://cdn.discordapp.com/avatars/959534223293833256/"
             + data.data.discord_user.avatar 
             + ".webp?size=512";
-        
         c.replaceWith(img)
+
+        let img2 = document.createElement("img");
+        img2.id = "dsc-avatar";
+        img2.alt = "Discord Avatar";
+        img2.width = "128";
+        img2.height = "128";
+        img2.src = "https://cdn.discordapp.com/avatars/959534223293833256/"
+            + data.data.discord_user.avatar 
+            + ".webp?size=256";
+        d.replaceWith(img2)
     })
 
 const canvas = document.getElementById("particles-container");

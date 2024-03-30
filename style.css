@@ -3,6 +3,10 @@ body {
     flex-direction: column;
     margin: 0;
     overflow-x: hidden;
+    cursor: url('assets/cursor-idle.png'), auto;
+}
+
+body {
     cursor: url('cursor-idle.png'), auto;
 }
 
@@ -170,7 +174,7 @@ p, #center-desc {
 
     #menu-icon {
         display: block;
-        cursor: url('cursor-select.png'), auto;
+        cursor: url('assets/cursor-select.png'), auto;
         font-size: 24px;
         color: white;
         transition: transform 0.3s ease; 
@@ -240,6 +244,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    max-width: calc(100% - 40px);
     gap: 6px;
     padding: 6px;
     /* border: 4px solid rgba(90, 90, 90, 0.4); */
@@ -254,7 +259,7 @@ a {
     align-items: center;
 }
 
-#center-links svg {
+#center-links svg, #center-links img {
     flex: 1;
     width: 50px;
     height: auto;
@@ -266,43 +271,53 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    gap: 26px;
     width: 100%;
     min-height: 400px;
     padding: 16px;
     background-color: rgb(21, 26, 45);
 }
 
-#highlight-title {
-    min-width: 400px;
-    text-align: center;
-    color: white;
-    font-family: "ambit", Montserrat, sans-serif;
-    font-weight: 900;
-    font-size: 46px;
-    text-shadow: 0 0 12px white;
+#dsc-container {
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    min-height: 600px;
+    background-image: linear-gradient( #5a00ff, #989000);
+    border-radius: 6px;
+    padding: 6px;
 }
 
-@media only screen and (max-width: 1313px) {
-    #highlight-title {
-        min-width: 100%;
-    }
+#dsc-cover-1 {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
 }
 
-#iframe-status {
-    pointer-events: none;
-    max-width: 100%;
-    background-color: #1a1c1f;
-    border-radius: 10px;
+#dsc-banner {
+    border-radius: 6px 6px 0 0;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background-image: radial-gradient(
+        circle 20px at calc(100% - 30px) calc(100% - 30px),
+        transparent 30px,
+        purple 0
+    )
 }
 
-.hyperlink {
-    display: inline-block;
-    z-index: 3;
-    width: 410;
-    height: 210;
-    max-width: 100%;
-    border-radius: 10px;
+#dsc-avatar {
+    margin-top: -58px;
+    margin-left: 20px;
+    border-radius: 100%;
+    width: 96px;
+    height: 96px;
+}
+
+#dsc-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 100%;
 }
 
 ::-webkit-scrollbar {
