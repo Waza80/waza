@@ -394,11 +394,14 @@ code {
     #no-activity {
         text-align: left;
     }
+}
 
+@media only screen and (min-width: 800px) {
     #activity-container {
         align-items: start;
     }
 }
+
 
 ::-webkit-scrollbar {
     width: 10px;
