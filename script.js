@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('https://api.ipify.org?format=jsonp&callback=?', {method: 'GET'})
-        .then(response => response.json())
-        .then(data => console.log("%cWebsite made by waza80 :3 || IP LOGGED: " + JSON.stringify(data, null, 2), "font-size: 40px; color: rgb(0, 170, 255); padding: 4px; background-color: rgb(0, 70, 135)"))
-
     console.log("%cWebsite made by waza80 :3", "font-size: 40px; color: rgb(0, 170, 255); padding: 4px; background-color: rgb(0, 70, 135)")
 
     let t = document.getElementById("menu-icon"),
@@ -75,7 +71,6 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
     .then(data => {
         if (data.success !== true) {return}
 
-        console.log(data);
         let c = document.querySelector(".img-placeholder-1"), 
             d = document.querySelector(".img-placeholder-2"),
             e = document.querySelector(".dsc-display-name"),
@@ -127,7 +122,6 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
                     if (activity.details != undefined) {a_label.querySelector(".details").textContent = activity.details} else {a_label.querySelector(".details").remove()}
                     if (activity.state != undefined) {a_label.querySelector(".state").textContent = activity.state} else {a_label.querySelector(".state").remove()}
                     if (activity.timestamps != undefined && activity.timestamps.start != undefined) {updateTime(a_label.querySelector(".timestamp"), activity.timestamps.start)} else {a_label.querySelector(".timestamp").remove()}
-                    console.log("second")
                 } else {
                     if (data.data.spotify.album_art_url != undefined) {
                         a_img.src = data.data.spotify.album_art_url
@@ -137,7 +131,6 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
                     if (activity.details != undefined) {a_label.querySelector(".details").textContent = activity.details} else {a_label.querySelector(".details").remove()}
                     if (activity.state != undefined) {a_label.querySelector(".state").textContent = activity.state} else {a_label.querySelector(".state").remove()}
                     if (data.data.spotify.timestamps.start) {updateTime(a_label.querySelector(".timestamp"), data.data.spotify.timestamps.start)} else {a_label.querySelector(".timestamp").remove()}
-                    console.log("first")
                 }
                 activityContainer.appendChild(a)
             })
@@ -150,6 +143,8 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
             noActivity.classList = ""
         }
     })
+
+let ws = new WebSocket("wss://api.lanyard.rest/socket")
 
 const canvas = document.getElementById("particles-container");
 const ctx = canvas.getContext("2d");

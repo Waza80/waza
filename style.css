@@ -383,7 +383,7 @@ code {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 14px;
+    border-radius: 12px;
 }
 
 #label-container #title {
@@ -401,7 +401,6 @@ code {
         align-items: start;
     }
 }
-
 
 ::-webkit-scrollbar {
     width: 10px;
