@@ -278,6 +278,9 @@ a {
     min-height: 400px;
     padding: 16px;
     background-color: rgb(21, 26, 45);
+    background-image: radial-gradient(
+        circle at center, rgb(42, 40, 73), rgb(21, 26, 45) 70%, rgb(21, 26, 45)
+    );
 }
 
 #dsc-container {
@@ -372,8 +375,13 @@ code {
     justify-content: center;
 }
 
-#activity {
+#activity, #activity #label-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#activity {
     gap: 16px;
 }
 
@@ -399,6 +407,14 @@ code {
 
 @media only screen and (min-width: 800px) {
     #activity-container {
+        align-items: start;
+    }
+
+    #activity {
+        flex-direction: row;
+    }
+
+    #activity, #activity #label-container {
         align-items: start;
     }
 }
