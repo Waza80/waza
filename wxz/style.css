@@ -62,7 +62,7 @@ p, #center-desc {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 26px;
+    gap: 16px;
 }
 
 #menu-list {
