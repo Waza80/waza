@@ -30,7 +30,8 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
 })
     .then(response => response.json())
     .then(data => {
-        let c = document.getElementById("center-holder");
+        let c = document.getElementById("center-holder"),
+            d = document.getElementById("dsc-waza").querySelector("#dsc-avatar")
         let img = document.createElement("img");
         img.id = "center-image";
         img.alt = "Waza Icon";
@@ -39,8 +40,17 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
         img.src = "https://cdn.discordapp.com/avatars/959534223293833256/"
             + data.data.discord_user.avatar 
             + ".webp?size=512";
-        
         c.insertBefore(img, c.firstChild)
+
+        let img2 = document.createElement("img");
+        img2.id = "dsc-avatar";
+        img2.alt = "Waza Icon";
+        img2.width = "150";
+        img2.height = "150";
+        img2.src = "https://cdn.discordapp.com/avatars/959534223293833256/"
+            + data.data.discord_user.avatar 
+            + ".webp?size=256";
+        d.replaceWith(img2)
     })
 
 fetch("https://api.lanyard.rest/v1/users/967182770331865088", {
@@ -48,17 +58,26 @@ fetch("https://api.lanyard.rest/v1/users/967182770331865088", {
 })
     .then(response => response.json())
     .then(data => {
-        let c = document.getElementById("center-holder");
+        let c = document.getElementById("center-holder"),
+            d = document.getElementById("dsc-zeltales").querySelector("#dsc-avatar");
         let img = document.createElement("img");
         img.id = "center-image";
-        img.alt = "Waza Icon";
+        img.alt = "Zelty Icon";
         img.width = "150";
         img.height = "150";
         img.src = "https://cdn.discordapp.com/avatars/967182770331865088/"
             + data.data.discord_user.avatar 
             + ".webp?size=512";
-        
         c.appendChild(img)
+        let img2 = document.createElement("img");
+        img2.id = "dsc-avatar";
+        img2.alt = "Zelty Icon";
+        img2.width = "150";
+        img2.height = "150";
+        img2.src = "https://cdn.discordapp.com/avatars/967182770331865088/"
+            + data.data.discord_user.avatar 
+            + ".webp?size=256";
+        d.replaceWith(img2)
     })
 
 const canvas = document.getElementById("particles-container");

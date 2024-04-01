@@ -58,7 +58,6 @@ p, #center-desc {
     -webkit-backdrop-filter: blur(12px);
 }
 
-
 #menu-list {
     list-style-type: none;
     margin: 0;
@@ -347,8 +346,9 @@ code {
     border-radius: 4px;
 }
 
+/* to specify */
 #dsc-scrolling::-webkit-scrollbar {
-    width: 5px;
+    width: 0px;
 }
 
 #dsc-scrolling::-webkit-scrollbar-thumb {
@@ -357,13 +357,14 @@ code {
 }
 
 #no-activity {
-    padding: 16px;
+    padding-top: 16px;
     text-align: center;
 }
 
 #no-activity p {
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
+    margin: 0;
 }
 
 #activity-container {
