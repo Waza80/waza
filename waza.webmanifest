@@ -1,0 +1,16 @@
+{
+    "name": "Waza Portfolio Website",
+    "short_name": "Waza PF",
+    "description": "Waza's portfolio that shows information about the cutest furry boy!",
+    "icons": [
+        {
+            "src": "assets/logo-w-bg.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "fullscreen",
+    "theme_color": "#5A00FF",
+    "background-color": "#282834"
+}
