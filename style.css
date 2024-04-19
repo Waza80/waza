@@ -83,7 +83,7 @@ p, #center-desc {
 }
 
 #menu-icon {
-    display: none; 
+    display: none;
 }
 
 .menu-blur {
@@ -269,6 +269,7 @@ a {
 
 #discord {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;

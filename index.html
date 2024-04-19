@@ -9,14 +9,14 @@
         <meta name="description" content="The cutest furry boy! &gt;.&lt;">
         <meta name="theme-color" content="#00014a">
         <meta property="og:title" content="Waza - Home">
-        <meta property="og:image" content="https://img.zeltales.dev/tRizEGHc.png">
+        <meta property="og:image" content="assets/logo-w-bg.png">
         <meta property="og:description" content="The cutest furry boy! &gt;.&lt;">
         <meta property="og:type" content="website">
 
-        <link rel="shortcut icon" type="image/png" href="assets/logo-w-bg.ico">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/logo-w-bg.ico">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-w-bg.ico">
-        <link rel="icon" type="image/x-icon" href="assets/logo-w-bg.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/logo-w-bg-16.ico">
+        <link rel="icon" type="image/x-icon" sizes="32x32" href="assets/logo-w-bg-32.ico">
+        <link rel="icon" type="image/png" href="assets/logo-w-bg.png">
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -26,7 +26,7 @@
         
         <nav id="topbar">
             <img id="topbar-img" src="assets/logo-w.svg" alt="Waza Icon" width="50" height="50">
-            <div id="menu-icon">&#9776;</div>
+            <div id="menu-icon" readonly="readonly">&#9776;</div>
             <ul id="menu-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#discord">Discord</a></li>
@@ -54,7 +54,7 @@
             <div id="dsc-container">
                 <div id="dsc-cover-1">
                     <img loading="lazy" id="dsc-banner" src="assets/banner.gif" alt="Discord Banner">
-                    <img loading="lazy" id="dsc-avatar" class="img-placeholder-2" src="assets/logo-w-bg.ico" width="64" height="64" alt="Avatar Logo">
+                    <img loading="lazy" id="dsc-avatar" class="img-placeholder-2" src="favicon.ico" width="64" height="64" alt="Avatar Logo">
                     <div style="display: flex; justify-content: flex-end; margin-top: -35px; padding-right: 20px;"> <!-- Display badges at the right of the screen -->
                         <div id="dsc-badges">
                             <svg style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.70001L2.69995 12L12 21.3L21.2999 12L12 2.70001ZM12 17.35L6.64995 12L12 6.65001L17.35 12L12 17.35Z" fill="#FF6BFA"/><path d="M11.9934 6.6472L6.64062 12L11.9934 17.3528L17.3462 12L11.9934 6.6472Z" fill="#FFDEF9"/><path d="M12 2.70001V6.65001L17.35 12H21.3L12 2.70001Z" fill="#FFB0FF"/></svg>
@@ -78,7 +78,7 @@
             <div id="no-activity">
                 <p>I'm not currently doing anything! &lt;3</p>
             </div>
-            <div id="activity-container">
+            <div id="activity-container" class="hidden">
                 <div id="activity" class="hidden">
                     <img loading="lazy" id="image" src="assets/unknown-activity.png" width="80" height="80" alt="Activity">
                     <div id="label-container">
