@@ -54,7 +54,10 @@
             <div id="dsc-container">
                 <div id="dsc-cover-1">
                     <div id="dsc-banner-outer">
-                        <video id='dsc-banner' autoplay loop muted playsinline src="assets/banner.webm" alt="Discord Banner" onended="videoPlay()"></video>
+                        <video id='dsc-banner' autoplay loop muted playsinline onended="videoPlay()">
+                            <source src="assets/banner.webm" type="video/webm">
+                            <source src="assets/banner.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <img loading="lazy" id="dsc-avatar" class="img-placeholder-2" src="favicon.ico" width="64" height="64" alt="Avatar Logo">
                     <div style="display: flex; justify-content: flex-end; margin-top: -35px; padding-right: 20px;"> <!-- Display badges at the right of the screen -->
