@@ -31,7 +31,7 @@ p, #center-desc {
     background-color: rgba(0, 0, 0, 0);
 }
 
-#main-content {
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,7 +42,7 @@ p, #center-desc {
     min-height: 500px;
 }
 
-#topbar {
+nav {
     z-index: 9999; 
     display: flex;
     justify-content: space-between;
@@ -127,7 +127,7 @@ p, #center-desc {
 }
 
 @media only screen and (max-width: 512px) {
-    #topbar {
+    nav {
         flex-direction: row-reverse;
     }
     
