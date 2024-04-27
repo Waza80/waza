@@ -25,6 +25,13 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 })
 
+function videoPlay() {
+    let video = document.getElementById('dsc-banner');
+
+    video.currentTime = 0;
+    video.play()
+}
+
 fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
     method: "GET"
 })

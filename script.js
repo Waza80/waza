@@ -40,6 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
     */
 })
 
+function videoPlay() {
+    let video = document.getElementById('dsc-banner');
+
+    video.currentTime = 0;
+    video.play()
+}
+
 function elapsedTime(timestamp) {
     let startTime = timestamp;
     let endTime = Number(new Date());
