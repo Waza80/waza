@@ -242,7 +242,7 @@ main {
     box-sizing: border-box;
 }
 
-#textbox-container svg {
+#textbox-container button svg {
     height: 20px;
     width: 20px;
 }
