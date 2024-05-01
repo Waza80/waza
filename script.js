@@ -145,7 +145,11 @@ function updateStatus(data) {
                 if (activity.state != undefined) {a_label.querySelector(".state").textContent = activity.state} else {a_label.querySelector(".state").remove()}
                 if (data.spotify.timestamps.start) {updateTime(a_label.querySelector(".timestamp"), data.spotify.timestamps.start)} else {a_label.querySelector(".timestamp").remove()}
             }
-            activityContainer.appendChild(a)
+            if (activity.name !== "Spotify") {
+                activityContainer.appendChild(a)
+            } else {
+                activityContainer.insertBefore(a, activityContainer.firstChild)
+            }
         })
     } else {
         activityContainer.classList.add("hidden")
@@ -153,31 +157,33 @@ function updateStatus(data) {
     }
 }
 
-let ws = new WebSocket("wss://api.lanyard.rest/socket")
-ws.onerror = () => {console.warn("Websocket connection failed, status auto-update is unavailable")}
+try {
+    let ws = new WebSocket("wss://api.lanyard.rest/socket")
+    ws.onerror = () => {console.warn("Websocket connection failed, status auto-update is unavailable")}
 
-let heartbeatInterval = null
-ws.onmessage = (event) => {
-    let event_data = JSON.parse(event.data)
-    if (event_data.op === 1) {
-        heartbeatInterval = event_data.d.heartbeat_interval
-        setInterval(() => {ws.send(JSON.stringify({op: 3})); console.log("Heartbeat sent")}, heartbeatInterval)
-        ws.send(JSON.stringify({
-            op: 2,
-            d: {
-                subscribe_to_ids: ["959534223293833256"],
+    let heartbeatInterval = null
+    ws.onmessage = (event) => {
+        let event_data = JSON.parse(event.data)
+        if (event_data.op === 1) {
+            heartbeatInterval = event_data.d.heartbeat_interval
+            setInterval(() => {ws.send(JSON.stringify({op: 3})); console.log("Heartbeat sent")}, heartbeatInterval)
+            ws.send(JSON.stringify({
+                op: 2,
+                d: {
+                    subscribe_to_ids: ["959534223293833256"],
+                }
+            }))
+        } else if (event_data.op === 0) {
+            if (event_data.t === "INIT_STATE") {
+                updateStatus(event_data.d[Object.keys(event_data.d)[0]])
+            } else {
+                updateStatus(event_data.d)
             }
-        }))
-    } else if (event_data.op === 0) {
-        if (event_data.t === "INIT_STATE") {
-            updateStatus(event_data.d[Object.keys(event_data.d)[0]])
-        } else {
-            updateStatus(event_data.d)
+        } else if (event_data.op === 3) {
+            // console.log(event_data.d)
         }
-    } else if (event_data.op === 3) {
-        // console.log(event_data.d)
     }
-}
+} catch (err) {}
 
 const canvas = document.getElementById("particles-container");
 const ctx = canvas.getContext("2d");
