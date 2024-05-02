@@ -463,6 +463,11 @@ code {
     max-width: 1200px;
 }
 
+@media only screen and (max-width: 1200px) {
+    #knowledge {
+        max-width: calc(100% - 16px);
+    }
+}
 #knowledge-card {
     display: flex;
     align-items: center;
@@ -486,12 +491,16 @@ code {
 }
 
 #knowledge-card svg {
-    width: 70px;
+    width: 60px;
 }
 
 @media only screen and (min-width: 800px) {
     #knowledge-card {
         width: 300px;
+    }
+
+    #knowledge-card svg {
+        width: 70px;
     }
 }
 
