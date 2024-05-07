@@ -46,7 +46,7 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
         img.height = "150";
         img.src = "https://cdn.discordapp.com/avatars/959534223293833256/"
             + data.data.discord_user.avatar 
-            + ".webp?size=512";
+            + (data.data.discord_user.avatar.match('a_') ? ".gif?size=512" : ".webp?size=512");
         c.insertBefore(img, c.firstChild)
 
         let img2 = document.createElement("img");
@@ -56,7 +56,7 @@ fetch("https://api.lanyard.rest/v1/users/959534223293833256", {
         img2.height = "150";
         img2.src = "https://cdn.discordapp.com/avatars/959534223293833256/"
             + data.data.discord_user.avatar 
-            + ".webp?size=256";
+            + (data.data.discord_user.avatar.match('a_') ? ".gif?size=256" : ".webp?size=256");
         d.replaceWith(img2)
     })
 
@@ -74,7 +74,7 @@ fetch("https://api.lanyard.rest/v1/users/967182770331865088", {
         img.height = "150";
         img.src = "https://cdn.discordapp.com/avatars/967182770331865088/"
             + data.data.discord_user.avatar 
-            + (data.data.discord_user.avatar.match('a_') ? ".gif?size=512" : ".webp?size=512";
+            + (data.data.discord_user.avatar.match('a_') ? ".gif?size=512" : ".webp?size=512");
         c.appendChild(img)
         let img2 = document.createElement("img");
         img2.id = "dsc-avatar";
@@ -83,7 +83,7 @@ fetch("https://api.lanyard.rest/v1/users/967182770331865088", {
         img2.height = "150";
         img2.src = "https://cdn.discordapp.com/avatars/967182770331865088/"
             + data.data.discord_user.avatar 
-            + (data.data.discord_user.avatar.match('a_') ? ".gif?size=256" : ".webp?size=256";
+            + (data.data.discord_user.avatar.match('a_') ? ".gif?size=256" : ".webp?size=256");
         d.replaceWith(img2)
     })
 
