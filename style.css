@@ -468,7 +468,7 @@ code {
         max-width: calc(100% - 16px);
     }
 }
-.knowledge-card {
+#knowledge-card {
     display: flex;
     align-items: center;
     width: 450px;
@@ -479,27 +479,27 @@ code {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.knowledge-card div {
+#knowledge-card div {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.knowledge-card div h1, .knowledge-card div p {
+#knowledge-card div h1, #knowledge-card div p {
     margin: 0;
 }
 
-.knowledge-card svg {
+#knowledge-card svg {
     width: 60px;
 }
 
 @media only screen and (min-width: 800px) {
-    .knowledge-card {
+    #knowledge-card {
         width: 300px;
     }
 
-    .knowledge-card svg {
+    #knowledge-card svg {
         width: 70px;
     }
 }
