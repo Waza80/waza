@@ -85,7 +85,7 @@ function updateStatus(data) {
         img.height = "150";
         img.src = "https://cdn.discordapp.com/avatars/959534223293833256/"
             + data.discord_user.avatar 
-            + ".webp?size=512";
+            + (data.discord_user.avatar.match('a_') ? ".gif?size=512" : ".webp?size=512");
         c.replaceWith(img)
 
         let img2 = document.createElement("img");
@@ -96,7 +96,7 @@ function updateStatus(data) {
         img2.height = "128";
         img2.src = "https://cdn.discordapp.com/avatars/959534223293833256/"
             + data.discord_user.avatar 
-            + ".webp?size=256";
+            + (data.discord_user.avatar.match('a_') ? ".gif?size=256" : ".webp?size=256");
         d.replaceWith(img2)
     }
 
