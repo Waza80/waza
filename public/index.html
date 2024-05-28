@@ -13,25 +13,25 @@
         <meta property="og:description" content="The cutest furry boy! &gt;.&lt;">
         <meta property="og:type" content="website">
 
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-        <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/logo-w-bg-16.ico">
-        <link rel="icon" type="image/x-icon" sizes="32x32" href="assets/logo-w-bg-32.ico">
-        <link rel="icon" type="image/png" href="assets/logo-w-bg.png">
-        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico">
+        <link rel="icon" type="image/x-icon" sizes="16x16" href="./assets/logo-w-bg-16.ico">
+        <link rel="icon" type="image/x-icon" sizes="32x32" href="./assets/logo-w-bg-32.ico">
+        <link rel="icon" type="image/png" href="./assets/logo-w-bg.png">
+        <link rel="stylesheet" href="styles/main.css">
     </head>
 
     <body>
         <canvas id="particles-container" onresize="resizeCanvas()"></canvas>
-        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
         
         <nav>
             <img id="topbar-img" src="assets/logo-w.svg" alt="Waza Icon" width="50" height="50">
             <div id="menu-icon" readonly="readonly">&#9776;</div>
             <ul id="menu-list">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#discord">Discord</a></li>
                 <li><a href="https://github.com/Waza80">Github</a></li>
-                <li><a href="wxz/">Waza X Zeltales</a></li>
+                <li><a href="wxz">Waza X Zeltales</a></li>
             </ul>
         </nav>
         
@@ -55,11 +55,11 @@
                 <div id="dsc-cover-1">
                     <div id="dsc-banner-outer">
                         <video id='dsc-banner' autoplay loop muted playsinline onended="videoPlay()">
-                            <source src="assets/banner.webm" type="video/webm">
-                            <source src="assets/banner.mp4" type="video/mp4">
+                            <source src="./assets/banner.webm" type="video/webm">
+                            <source src="./assets/banner.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <img loading="lazy" id="dsc-avatar" class="img-placeholder-2" src="favicon.ico" width="64" height="64" alt="Avatar Logo">
+                    <img loading="lazy" id="dsc-avatar" class="img-placeholder-2" src="./assets/favicon.ico" width="64" height="64" alt="Avatar Logo">
                     <div style="display: flex; justify-content: flex-end; margin-top: -35px; padding-right: 20px;"> <!-- Display badges at the right of the screen -->
                         <div id="dsc-badges">
                             <svg style="width: 24px; height: 24px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.70001L2.69995 12L12 21.3L21.2999 12L12 2.70001ZM12 17.35L6.64995 12L12 6.65001L17.35 12L12 17.35Z" fill="#FF6BFA"/><path d="M11.9934 6.6472L6.64062 12L11.9934 17.3528L17.3462 12L11.9934 6.6472Z" fill="#FFDEF9"/><path d="M12 2.70001V6.65001L17.35 12H21.3L12 2.70001Z" fill="#FFB0FF"/></svg>
@@ -85,7 +85,7 @@
             </div>
             <div id="activity-container" class="hidden">
                 <div id="activity" class="hidden">
-                    <img loading="lazy" id="image" src="assets/unknown-activity.png" width="80" height="80" alt="Activity">
+                    <img loading="lazy" id="image" src="./assets/unknown-activity.png" width="80" height="80" alt="Activity">
                     <div id="label-container">
                         <p id="title">Unnamed Game</p>
                         <p class="details">Details</p>
