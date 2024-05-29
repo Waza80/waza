@@ -5,7 +5,7 @@ const path = require("path");
 app.use(express.static("public"));
 
 app.get('/wxz', (req, res) => {
-    res.sendFile('wxz.html', { root: path.join(__dirname, 'public') })
+    res.sendFile('wxz.html', { root: path.join(__dirname, '..', 'public') })
 })
 
 app.get('/github', (req, res) => {
