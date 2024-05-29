@@ -13,7 +13,7 @@ app.get('/github', (req, res) => {
 })
 
 app.get('/logger', (req, res) => {
-    res.send(`Successfully logged ${req.ips} to database`)
+    res.send(`Successfully logged ${req.ip} to database`)
 })
 
 app.listen(3000 , () => {
