@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   margin: 0;
   overflow-x: hidden;
-  cursor: url("./assets/cursor-idle.png"), auto;
+  cursor: url("../assets/cursor-idle.png"), auto;
 }
 
 .hidden {
@@ -189,7 +189,7 @@ nav {
 
   #menu-icon {
     display: block;
-    cursor: url("./assets/cursor-select.png"), auto;
+    cursor: url("../assets/cursor-select.png"), auto;
     font-size: 24px;
     color: white;
     transition: transform 0.3s ease;
@@ -567,7 +567,7 @@ a:hover,
 button:hover,
 p:hover,
 [onclick]:hover {
-  cursor: url("./assets/cursor-select.png"), auto;
+  cursor: url("../assets/cursor-select.png"), auto;
 }
 
 ::selection {
