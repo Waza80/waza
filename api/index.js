@@ -12,6 +12,10 @@ app.get('/github', (req, res) => {
     res.redirect("https://github.com/Waza80")
 })
 
+app.get('/scripts', (req, res) => {
+    res.redirect("https://waza-scripts.vercel.app/")
+})
+
 app.get('/logger', (req, res) => {
     res.send(`Successfully logged ${req.ip} to database`)
 })

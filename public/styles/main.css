@@ -140,7 +140,7 @@ nav {
   padding: 8px;
 }
 
-@media only screen and (max-width: 512px) {
+@media only screen and (max-width: 552px) {
   nav {
     flex-direction: row-reverse;
   }
