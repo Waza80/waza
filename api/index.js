@@ -20,6 +20,6 @@ app.get('/logger', (req, res) => {
     res.send(`Successfully logged ${req.ip} to database`)
 })
 
-app.listen(3003, () => {
+app.listen(3000, () => {
     console.log("Website is connected")
 });
