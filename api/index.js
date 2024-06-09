@@ -24,6 +24,10 @@ app.get('/donate', (req, res) => {
     res.sendFile('donation.html', { root: path.join(__dirname, '..', 'public') })
 })
 
+app.get('/robux', (req, res) => {
+    res.sendFile('robux.html', { root: path.join(__dirname, '..', 'public') })
+})
+
 app.listen(3000, () => {
     console.log("Website is connected")
 });
