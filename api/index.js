@@ -28,6 +28,10 @@ app.get('/robux', (req, res) => {
     res.sendFile('robux.html', { root: path.join(__dirname, '..', 'public') })
 })
 
+app.get('/hydrogen', (req, res) => {
+    res.sendFile('hydrogen.html', { root: path.join(__dirname, '..', 'public') })
+})
+
 app.listen(3000, () => {
     console.log("Website is connected")
 });
