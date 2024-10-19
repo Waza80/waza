@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let t = document.getElementById("menu-icon"),
         i = document.getElementById("menu-list"),
-        j = document.querySelectorAll(".scroll-animation");
+        j = document.querySelectorAll(".scroll-animation"),
+        m = document.querySelector('.notif'),
+        l = document.querySelector('.notif-close');
     
     let c = i.cloneNode(true);
     c.removeAttribute("id");
@@ -38,6 +40,12 @@ document.addEventListener("DOMContentLoaded", function() {
         l = this.window.scrollY
     })
     */
+
+    if (localStorage && localStorage.getItem('notif-clicked') === 'true') {
+        m.remove()
+    } else {
+        l.addEventListener('click', () => {m.remove(); if (localStorage) localStorage.setItem('notif-clicked', 'true');})
+    }
 })
 
 function videoPlay() {

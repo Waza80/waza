@@ -43,6 +43,32 @@ h1 {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.notif {
+  z-index: 1000000000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  padding: 16px;
+  border-radius: 12px;
+
+  background-color: rgb(9, 11, 22);
+}
+
+.notif p {
+  margin: 0;
+}
+
+.notif img {
+  cursor: url("../assets/cursor-select.png"), auto;
+}
+
 main {
   display: flex;
   flex-direction: column;
