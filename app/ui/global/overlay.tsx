@@ -65,11 +65,12 @@ export function Overlay({
         <LoaderCircle className="animate-spin" />
       </div>
       <div className={clsx(
-        "size-10 bg-red-500 rounded-full appear flex justify-center items-center transition-all duration-200",
+        "h-10 bg-red-500 select-none pointer-events-none rounded-full appear flex gap-2 px-3 justify-center items-center transition-all duration-200",
         {
           "opacity-0 translate-y-2.5 hidden": (loading || status) === true
         }
       )}>
+        Disconnected, reload the page.
         <X/>
       </div>
       <div className={clsx(
@@ -83,7 +84,7 @@ export function Overlay({
       {state?.activities && state.activities.map(activity => {
         if (activity.name === 'Spotify') return
         return (
-          <div key={activity.id} className="w-72 max-w-full p-1 bg-slate-900 rounded-full appear flex gap-2 items-center">
+          <div key={activity.id} className="w-76 max-w-full p-1 bg-slate-900 rounded-full appear flex gap-2 items-center">
             <Image
               src={activity.assets?.large_image ? (activity.assets.large_image.startsWith("mp:external/")
                 ? `https://media.discordapp.net/external/${activity.assets.large_image.replace("mp:external/", "")}` 
@@ -94,10 +95,10 @@ export function Overlay({
               alt=""
             />
             <div className="flex flex-col">
-              <p className="font-bold -my-0.5">
+              <p className="font-bold select-none pointer-events-none truncate -my-0.5">
                 {activity.name}
               </p>
-              <p className="text-sm text-gray-500 -my-0.5">
+              <p className="text-sm select-none pointer-events-none truncate text-gray-500 -my-0.5">
                 {activity?.details ? activity.details : formatTime((Date.now() - activity.timestamps.start) / 1000) + ' elapsed'}
               </p>
             </div>
@@ -117,16 +118,16 @@ export function Overlay({
               className="rounded-xl select-none pointer-events-none"
               alt={spotify.album}
             />
-            <div className="flex flex-col justify-center">
-              <p className="-my-0.5">
+            <div className="flex select-none pointer-events-none flex-col justify-center">
+              <p className="truncate -my-0.5">
                 {spotify.song}
               </p>
-              <p className="text-sm text-gray-400 -my-0.5">
+              <p className="text-sm select-none pointer-events-none truncate text-gray-400 -my-0.5">
                 {spotify.artist}
               </p>
             </div>
             <div className="flex-1 flex justify-end items-center pr-2">
-              <p className="text-sm text-center">
+              <p className="text-sm select-none pointer-events-none text-center">
               {`${formatTime(progress / 1000)} / ${formatTime((spotify.timestamps.end - spotify.timestamps.start) / 1000)}`}
               </p>
             </div>
