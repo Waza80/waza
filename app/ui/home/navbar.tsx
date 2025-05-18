@@ -9,7 +9,7 @@ export default function Navbar({
 }) {
   const state = data as DiscordData
   const user = state?.discord_user
-  const [opened, setOpened] = useState(false)
+  //const [opened, setOpened] = useState(false)
   const [savedAvatar, setSavedAvatar] = useState<string | null>(null)
 
   const avatar = user ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}${user.avatar.match('a_') ? ".gif?size=512" : ".webp?size=512"}` : null
@@ -25,9 +25,11 @@ export default function Navbar({
     } catch {}
   }, [avatar])
 
+  /*
   const handleClick = () => {
     setOpened(!opened)
   }
+  */
 
   return (
     <nav className="z-50 fixed top-10 h-[76px] rounded-2xl flex items-center py-1 px-4 w-[70vw] max-sm:min-w-[calc(100vw-32px)] max-w-[912px] bg-black/50 border border-black backdrop-blur-md">
