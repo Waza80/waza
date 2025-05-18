@@ -1,7 +1,7 @@
 import { DiscordData, Spotify } from "@/app/page"
 import clsx from "clsx"
 import { LoaderCircle, X } from "lucide-react"
-import Image from "next-export-optimize-images/image"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 
 const formatTime = (seconds: number) => {
