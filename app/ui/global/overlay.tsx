@@ -116,7 +116,7 @@ export function Overlay({
             </div>
             <div className="flex-none flex justify-end items-center pr-2">
               <p className="text-sm select-none pointer-events-none text-center">
-              {`${formatTime((now - spotify.timestamps.start) / 1000)} / ${formatTime((spotify.timestamps.end - spotify.timestamps.start) / 1000)}`}
+              {`${formatTime(Math.min(now - spotify.timestamps.start, spotify.timestamps.end - spotify.timestamps.start) / 1000)} / ${formatTime((spotify.timestamps.end - spotify.timestamps.start) / 1000)}`}
               </p>
             </div>
           </div>
