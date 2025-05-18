@@ -4,7 +4,23 @@ import withExportImages from 'next-export-optimize-images';
 
 const nextConfig: NextConfig = {
   images: {
-    loader: "default"
+    loader: "default",
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.scdn.co',
+        port: '',
+        pathname: '/*',
+        search: '',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.discordapp.*',
+        port: '',
+        pathname: '/*',
+        search: '',
+      },
+    ]
   }
 };
 
