@@ -6,9 +6,21 @@ const nextConfig: NextConfig = {
   images: {
     loader: "default",
     remotePatterns: [
-      new URL("https://cdn.discordapp.com/**"),
-      new URL("https://media.discordapp.net/**"),
-      new URL("https://i.scdn.co/**"),
+      {
+        protocol: 'https',
+        hostname: 'cdn.discordapp.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.discordapp.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.scdn.co',
+        pathname: '/**',
+      },
     ]
   }
 };

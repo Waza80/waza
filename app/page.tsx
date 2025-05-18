@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Overlay } from './ui/global/overlay';
 import Header from './ui/home/header';
+import Navbar from './ui/home/navbar';
 
 export interface KV {
   location: string;
@@ -120,6 +121,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col overflow-x-hidden justify-center items-center gap-6 w-screen max-w-full min-h-screen">
+      <Navbar data={discordData}/>
       <Overlay status={status} loading={loading} data={discordData}/>
       <Header />
     </div>
