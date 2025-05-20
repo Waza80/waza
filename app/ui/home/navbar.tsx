@@ -1,4 +1,4 @@
-import { DiscordData } from "@/app/page"
+import { DiscordData } from "@/app/lib/definitions/lanyard"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
