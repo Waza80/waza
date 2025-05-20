@@ -11,7 +11,7 @@ type TimeUnit = {
   duration: number;
 }
 
-export function getElapsedTime(startTime: number): TimeUnit[] {
+function getElapsedTime(startTime: number): TimeUnit[] {
   const NOW = Date.now()
   const ELAPSED = NOW - startTime
   
